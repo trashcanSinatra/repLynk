@@ -1,0 +1,343 @@
+/*
+Lumino Admin Bootstrap Template
+Version 1.0
+*/
+
+
+/*Global Styles*/
+
+
+/* Custom Styles */
+
+#mainContent {
+	min-height: 650px;
+	padding-bottom: 20px;
+}
+
+/* Hides Loading... from uijquery call */
+.ui-loader h1 {
+	visibility: hidden;
+	font-size: 1px;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.visible {
+	visibility: visible;
+}
+
+/* Customer Search Buttons and Input */
+
+#filterToggle {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 45px;
+	padding: 5px 5px;
+	width: 400px;
+	position: relative;
+	left: 15px;
+}
+
+.toggleBtns {
+	height: 50px;
+	width: 164px;
+	font-family: 'Lato', sans-serif;
+	font-size:24px;
+}
+
+#toggleCompany {
+	background-color: white;
+	color: #FE8B05;
+	border: 1px solid #d2e018;
+	box-shadow: 3px 3px 3px grey;
+	margin-left: 3px;
+}
+
+#togglePerson {
+	background-color: #d2e018;
+	color: #49240a;
+	border: 2px solid #d2e018;
+	box-shadow: 3px 3px grey;
+	margin-right:3px;
+}
+
+label {
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+	font-family: 'Lato', sans-serif;
+	color: #1ABB9C;
+	font-size: 16px;
+	font-weight:lighter;
+}
+
+input {
+    border: 1px solid #CAD622;
+    background-color: white;
+    color: #49240a;
+    padding: 10px 5px;
+	 margin-left: 10%;
+	 margin-right: 10%;
+	 margin-bottom: 15px;
+	 width: 80%;
+    font-size: 1em;
+	 font-family: 'Lato', sans-serif;
+	 align-self: center;
+}
+
+#edit_contact select {
+    border: 1px solid #CAD622;
+    background-color: white;
+    color: #49240a;
+    padding: 10px 5px;
+	 margin-left: 10%;
+	 margin-right: 10%;
+	 width: 80%;
+    font-size: 1em;
+	 font-family: 'Lato', sans-serif;
+	 align-self: center;
+	 position:relative;
+	 bottom: 20px;
+}
+
+/* Customer Search Results */
+
+#results {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	padding: 5px 5px;
+	max-width: 500px;
+	font-size: 20px;
+}
+
+.resultLine {
+	width: 100%;
+	margin: 0px;
+	border-bottom: 1px solid #70d622;
+	padding: 2px 18px;
+}
+
+.resultLine a {
+	font-size: 35px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-bottom: 6px;
+	color: #70d622;
+	text-shadow: 2px 2px 2px #494E54;
+	opacity: .95;
+}
+
+.resultLine a:hover {
+	color: #bfff00;
+}
+
+.floatLeft {
+	float:left;
+	color: #49240a;
+	font-size: 22px;
+	font-family: 'Alegreya Sans', sans-serif;
+	padding-top: 14px;
+}
+
+.left {
+	float: left;
+	padding-left: 2%;
+}
+
+.right {
+	float: right;
+	padding-right: 2%;
+}
+
+.clear {
+	clear: both;
+	height: 5px;
+}
+#floatAdjust {
+	position: relative;
+	top: 10px;
+}
+
+#floatLeftCompany {
+	float:left;
+	color: #49240a;
+	font-size: 22px;
+	font-family: 'Alegreya Sans', sans-serif;
+	height: 50px;
+	position: relative;
+	top: 5px;
+}
+
+#floatLeftCompany span {
+	font-size: 18px;
+	color: #FE8B05;
+	position: relative;
+	bottom: 5px;
+}
+
+.floatRight {
+	float:right;
+}
+
+.phoneIcon {
+	position: relative;
+	top: 8px;
+}
+
+#phoneText {
+	font-size: 24px;
+	color: #FE8B05;
+	width: 150px;
+	margin-right: 40px;
+	margin-top: 15px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.emailIcon {
+	position: relative;
+	top: 3px;
+}
+
+
+#linkFix {
+	font-size: 22px;
+	font-family: 'Alegreya Sans', sans-serif;
+	padding-top: 8px;
+	padding-bottom: 0px;
+	margin: 0px;
+	color: #49240a;
+	text-shadow: none;
+	position: relative;
+	right: 14px;
+}
+
+a#linkFix:hover {
+	color: #22cad6;
+}
+
+
+#biz_span {
+	font-size: 12px;
+	color: #1ABB9C;
+	position: relative;
+	bottom: 10px;
+	font-weight: 100;
+}
+
+#noMatch {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	padding: 5px 5px;
+	max-width: 500px;
+	font-size: 20px;
+	text-align: center;
+	font-size: 22px;
+	color: #49240a;
+}
+
+@media screen and (min-width: 480px) {
+	.floatLeft {
+		float:left;
+		color: #49240a;
+		font-size: 22px;
+		font-family: 'Alegreya Sans', sans-serif;
+		padding-top: 20px;
+		height: 50px;
+	}
+
+	#floatLeftCompany {
+		position: relative;
+		bottom: 5px;
+	}
+
+	.floatRight {
+		float:right;
+		height: 50px;
+	}
+
+	.floatRight i {
+		margin-top: 10px;
+	}
+
+	.resultLine {
+		width: 100%;
+		margin: 0px;
+		border-bottom: 1px solid #70d622;
+		padding: 2px 20px;
+		height: 60px;
+	}
+
+	#floatLeftCompany span {
+		color: #1ABB9C;
+		position: relative;
+		bottom: 8px;
+	}
+
+	#phoneText {
+		font-size: 24px;
+		color: #FE8B05;
+		font-family: 'Josefin Sans', sans-serif;
+		position: relative;
+		left: 55px;
+	}
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+	#filterToggle {
+		left: 22px;
+		margin-top: 5px;
+	}
+}
+
+/* Contact Edit Results */
+
+#edit_contact {
+	margin-top: 28px;
+}
+
+#edit_contact_btn_div {
+	margin-left: 24%;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.edit_contact_btns {
+	border: 1px solid #CAD622;
+	background-color: white;
+	color: #49240a;
+}
+
+
+@media screen and (max-width: 1180px) {
+	#edit_contact_btn_div {
+		margin-left: 16%;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	#edit_contact_btn_div {
+		margin-left: 36%;
+		margin-top: 0px;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#edit_contact_btn_div {
+		margin-left: 24%;
+		margin-top: 0px;
+		width: 100%;
+	}
+
+	#contactsNav {
+		margin-top: 50px;
+	}
+}
