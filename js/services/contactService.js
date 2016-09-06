@@ -1,42 +1,45 @@
 var contactService = (function() {
 
+  //PRIVATE MEMBERS 
   window.requestParam = 'contacts';
   // Must be relative to callpoint from url string in main app.
   var requestUrl = '../api/index.php/';
   var templates = templateManager;
-  var contact_results = [];
 
+
+  // PRIVATE METHODS
+  function contacts_like(partial, callback) {
+    $.getJSON(requestUrl + 'like/contacts/' + partial, callback);
+  }
+
+  function companies_like(partial, callback) {
+     $.getJSON(requestUrl + 'like/company/' + partial, callback);
+   }
+
+
+  // PUBLIC API
   var publicAPI = {
-
-   contacts_like : function(param) {
-     $.getJSON(requestUrl + 'like/contacts/' + param ,
-         templates.displayContacts);
-   },
-
-   companies_like : function(stringPartial) {
-      $.getJSON(requestUrl + 'like/company/' + stringPartial,
-         templates.displayCompanies);
-   },
 
    quick_search : function(param) {
       if(requestParam === 'contacts') {
-         publicAPI.contacts_like(param);
+         contacts_like(param, templates.displayContacts);
       } else {
-         publicAPI.companies_like(param);
+         companies_like(param, templates.displayCompanies);
       }
    },
 
-   edit_contact_box_fill : function(param) {
-      $.getJSON(requestUrl + 'like/contacts/' + param,
-         function(data) {
-            $.each(data, function(i, val) {
-               contact_results.push(val['first_name'] + ' ' + val['last_name']);
-            });
-            $( "#tags" ).autocomplete({
-              source: contact_results
-            });
-         });
+   edit_contact_form_handler : function(param) {
+      // Retrieves contacts based on value in "Enter Contact" box.
+      contacts_like(param, templates.fillContactDropdown);
+
+      // Create an array with the name in the #tags field.  Perform
+      // a GET request for the contact matching first and last name.
+      $('#tags').on('blur', function() {
+        var lookup = $('#tags').val().split(" ");
+        alert(lookup[0] + " " + lookup[1]);
+      });
    }
+
   };
 
   return publicAPI;
