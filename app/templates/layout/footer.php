@@ -23,7 +23,7 @@
 <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="http://{{current_url}}/rep/js/vendor/bootstrap.min.js"></script>
 <script src="http://{{current_url}}/rep/js/vendor/custom.js"></script>
-<script src="http://{{current_url}}/rep/js/templates/phoneBookTemplate.js"></script>
+<script src="http://{{current_url}}/rep/js/templates/contactTemplate.js"></script>
 <script src="http://{{current_url}}/rep/js/services/contactService.js"></script>
 <script src="http://{{current_url}}/rep/js/services/navService.js"></script>
 <script src="http://{{current_url}}/rep/js/app.js"></script>

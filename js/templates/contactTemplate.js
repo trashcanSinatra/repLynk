@@ -1,31 +1,27 @@
 var templateManager = (function() {
+
+  // Private Props
+  var contact_results = [];
+
+  // Private Methods
+
+  function phoneSwap(dataVal) {
+    width = $( window ).width();
+    var html = "";
+
+    if(width >= 600) {
+       html += "<p id=\"phoneText\">" + dataVal + "</p>";
+    } else {
+       html += "<a href=\"tel:" + dataVal + "\">";
+       html += "<i class=\"fa fa-phone-square phoneIcon\"></i>";
+       html += "</a>";
+    }
+    return html;
+  }
+
+  // PUBLIC API
+
   var templates = {
-
-    phoneSwap : function(dataVal) {
-      width = $( window ).width();
-      var html = "";
-
-      if(width >= 600) {
-         html += "<p id=\"phoneText\">" + dataVal + "</p>";
-      } else {
-         html += "<a href=\"tel:" + dataVal + "\">";
-         html += "<i class=\"fa fa-phone-square phoneIcon\"></i>";
-         html += "</a>";
-      }
-      return html;
-    },
-
-    emailSwap : function(dataVal) {
-      width = $( window ).width();
-      var html = "";
-
-      if(width <= 600) {
-         html += "<a href=\"mailto:" + dataVal + "\">";
-         html += "<i class=\"fa fa-envelope phoneIcon\"></i>";
-         html += "</a>";
-      }
-      return html;
-    },
 
     displayContacts : function(data) {
       var results = $('#results');
@@ -42,7 +38,7 @@ var templateManager = (function() {
                    list += "<span class=\"biz_span\">" + val['biz_name'].toUpperCase() + "</span>";
                    list += "</div>";
                    list += "<div class=\"floatRight\">";
-                   list += templates.phoneSwap(val['phone']);
+                   list += phoneSwap(val['phone']);
                    list += "</div>";
                    list += "<div class=\"clear\"></div>";
                    list += "</div>";
@@ -71,7 +67,7 @@ var templateManager = (function() {
                    list += "<span>" + val['city'].toUpperCase() + "</span>";
                    list += "</div>";
                    list += "<div class=\"floatRight\">";
-                   list += templates.phoneSwap(val['phone']);
+                   list +=  phoneSwap(val['phone']);
                    list += "</div>";
                    list += "<div class=\"clear\"></div>";
                    list += "</div>";
@@ -83,9 +79,16 @@ var templateManager = (function() {
        }
    },
 
-   fillContactDropdown : function(data) {
-      alert(data);
+   fillContactDropdown : function(data) {    
+      $.each(data, function(i, val) {
+         contact_results.push(val['first_name'] + ' ' + val['last_name']);
+      });
+      $( "#tags" ).autocomplete({
+        source: contact_results
+      });
    }
-  }
+  };
+
   return templates;
+  
 })();
