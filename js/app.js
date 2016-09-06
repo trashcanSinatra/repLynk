@@ -13,8 +13,9 @@ $( document ).on( "pageinit", function( event ) {
        contacts.quick_search(this.value);
     });
 
-   // Handles the edit contact dropdown box
-   contacts.edit_contact_box_fill('C');
+   // Handles the edit contact dropdown box,
+   // and fills form when user selects contact.
+   contacts.edit_contact_form_handler('C');
 
 
 });
