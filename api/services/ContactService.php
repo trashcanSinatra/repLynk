@@ -8,7 +8,7 @@ class ContactService implements IService {
 
     $app->get('/contacts',function () {
       $model = new ContactModel();
-      $contacts = (!$type) ? $model->get_contacts() : $model->get_contacts($type);
+      $contacts = $model->get_contacts();
       echo json_encode($contacts);
      });
 
@@ -23,6 +23,14 @@ class ContactService implements IService {
         $contact = $model->get_contact($id);
         echo json_encode($contact);
       });
+
+      $app->get('/contact/name/:first/:last',
+         function($firstname, $lastname) {
+            $model = new ContactModel();
+            $contact = $model->get_contact_by_fullname($firstname, $lastname);
+            echo json_encode($contact);
+         }
+      );
 
       $app->get('/like/contacts/:param', function($param) {
          $model = new ContactModel();
