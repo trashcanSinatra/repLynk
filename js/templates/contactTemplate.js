@@ -2,7 +2,6 @@ var templateManager = (function() {
 
   // Private Props
   var contact_results = [];
-  var forms = formHelper;
   // Private Methods
 
   function phoneSwap(dataVal) {
