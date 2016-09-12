@@ -15,7 +15,17 @@ $( document ).on( "pageinit", function( event ) {
 
    // Handles the edit contact dropdown box,
    // and fills form when user selects contact.
-   contacts.edit_contact_form_handler('C');
+   $('#tags').on('keyup', function() {
+      contacts.edit_contact_dropdown();
+   });
+
+   // Handles filling of the edit contact form after
+   // contact is selected.
+
+   $('#tags').on('blur', function() {
+      contacts.get_contact($('#tags').val());
+   });
+
 
 
 });
