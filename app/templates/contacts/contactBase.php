@@ -33,21 +33,18 @@
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
             <label for="tags">Enter Contact:</label>
             <input id="tags" placeholder="Search Contacts..." />
-            <label for="first_name">First Name:</label>
-            <input id="first_name" placeholder="First Name..." />
-            <label for="last_name">Last Name:</label>
-            <input id="last_name" placeholder="Last Name..." />
-            <label for="edit_phone">Phone Number:</label>
-            <input id="edit_phone" placeholder="Phone Number..." />
+            <label for="edit_first_name">First Name:</label>
+            <input id="edit_first_name" placeholder="First Name..." />
+            <label for="edit_last_name">Last Name:</label>
+            <input id="edit_last_name" placeholder="Last Name..." />
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+               <label for="edit_phone">Phone Number:</label>
+               <input id="edit_phone" placeholder="Phone Number..." />
                <label for="edit_email">Email:</label>
                <input id="edit_email" placeholder="Email Address..." />
                <label for="edit_company">Company:</label>
                <input id="edit_company" placeholder="Company..." />
-               <label for="edit_cust_type">Customer Type:</label>
-               <select id="edit_cust_type">
-               </select>
                <div id="edit_contact_btn_div">
                   <button id="edit_cust_submit" class="btn btn-success" type="button">Edit Contact</button>
                   <button id="edit_cust_delete" class="btn btn-danger" type="button">Delete Contact</button>
