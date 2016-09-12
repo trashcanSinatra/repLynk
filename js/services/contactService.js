@@ -1,6 +1,6 @@
 var contactService = (function() {
 
-  //PRIVATE MEMBERS 
+  //PRIVATE MEMBERS
   window.requestParam = 'contacts';
   // Must be relative to callpoint from url string in main app.
   var requestUrl = '../api/index.php/';
@@ -9,11 +9,15 @@ var contactService = (function() {
 
   // PRIVATE METHODS
   function contacts_like(partial, callback) {
-    $.getJSON(requestUrl + 'like/contacts/' + partial, callback);
+    return $.getJSON(requestUrl + 'like/contacts/' + partial, callback);
   }
 
   function companies_like(partial, callback) {
      $.getJSON(requestUrl + 'like/company/' + partial, callback);
+   }
+
+   function get_contact_byName(first, last, callback) {
+      $.getJSON(requestUrl + 'contact/name/' + first + "/" + last, callback);
    }
 
 
@@ -28,16 +32,27 @@ var contactService = (function() {
       }
    },
 
-   edit_contact_form_handler : function(param) {
+   edit_contact_dropdown : function() {
       // Retrieves contacts based on value in "Enter Contact" box.
-      contacts_like(param, templates.fillContactDropdown);
-
+         lookup = $('#tags').val();
+         if(lookup) {
+          contacts_like(lookup, templates.fillContactDropdown);
+         }
       // Create an array with the name in the #tags field.  Perform
       // a GET request for the contact matching first and last name.
-      $('#tags').on('blur', function() {
-        var lookup = $('#tags').val().split(" ");
-        alert(lookup[0] + " " + lookup[1]);
-      });
+      // $('#tags').on('blur', function() {
+      //   var fullname = $('#tags').val().split(" ");
+      //   alert(fullname[0] + " " + fullname[1]);
+      // });
+   },
+
+   get_contact : function(fullName) {
+
+      var firstName = fullName.split(" ")[0];
+      var lastName = fullName.split(" ")[1];
+
+      get_contact_byName(firstName, lastName,
+                        templates.editContactFormFiller);
    }
 
   };
