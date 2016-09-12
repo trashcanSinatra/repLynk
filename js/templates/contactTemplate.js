@@ -2,7 +2,7 @@ var templateManager = (function() {
 
   // Private Props
   var contact_results = [];
-
+  var forms = formHelper;
   // Private Methods
 
   function phoneSwap(dataVal) {
@@ -79,16 +79,38 @@ var templateManager = (function() {
        }
    },
 
-   fillContactDropdown : function(data) {    
+   fillContactDropdown : function(data) {
+      contact_results = [];
       $.each(data, function(i, val) {
          contact_results.push(val['first_name'] + ' ' + val['last_name']);
       });
+
       $( "#tags" ).autocomplete({
+        delay: 0,
+        minLength: 1,
         source: contact_results
+      });
+   },
+
+   editContactFormFiller : function(data) {
+      inputs = {
+         first_name: $("#edit_first_name"),
+         last_name: $("#edit_last_name"),
+         phone: $("#edit_phone"),
+         email: $("#edit_email"),
+         company: $("#edit_company")
+      };
+
+      $.each(data, function(i, val) {
+         inputs.first_name.val(val['first_name']);
+         inputs.last_name.val(val['last_name']);
+         inputs.phone.val(val['phone']);
+         inputs.email.val(val['email']);
+         inputs.company.val(val['company_id']);
       });
    }
   };
 
   return templates;
-  
+
 })();
