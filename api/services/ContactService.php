@@ -24,6 +24,10 @@ class ContactService implements IService {
         echo json_encode($contact);
       });
 
+      $app->put('/contact/:id', function($id) {
+         echo "YOU MADE IT!" . " $id";
+      });
+
       $app->get('/contact/name/:first/:last',
          function($firstname, $lastname) {
             $model = new ContactModel();
@@ -43,6 +47,7 @@ class ContactService implements IService {
         $companies = $model->like_companies($param);
         echo json_encode($companies);
      });
+
 
 
   }  // END: Function handle_routes()
