@@ -36,6 +36,7 @@
            <label for="tags">Enter Contact:</label>
            <input id="tags" placeholder="Search Contacts..." />
 
+             <input type="hidden" id="edit_contact_id" />
              <label for="edit_first_name">First Name:</label>
              <input id="edit_first_name" placeholder="First Name..." required/>
              <label for="edit_last_name">Last Name:</label>
