@@ -50,8 +50,6 @@
                  <input id="edit_email" placeholder="Email Address..."
                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                      title="Please enter valid Email." required/>
-                 <label for="edit_company">Company:</label>
-                 <input id="edit_company" placeholder="Company..." />
 
                  <div id="edit_contact_btn_div">
                  <button id="edit_cust_submit" class="btn btn-success">Edit Contact</button>
