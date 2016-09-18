@@ -53,7 +53,8 @@
 
                  <div id="edit_contact_btn_div">
                  <button id="edit_cust_submit" class="btn btn-success">Edit Contact</button>
-                 <button id="edit_cust_delete" class="btn btn-danger">Delete Contact</button>
+                 <button id="edit_cust_delete" class="btn btn-danger"
+                         formnovalidate>Delete Contact</button>
                  </div>
              </div> <!-- END COLUMN RIGHT -->
            </form>
