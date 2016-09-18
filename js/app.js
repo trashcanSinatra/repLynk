@@ -26,6 +26,8 @@ $( document ).on( "pageinit", function( event ) {
       contacts.get_contact($('#tags').val());
    });
 
+   contacts.edit_contact();
+
 
 
 });
