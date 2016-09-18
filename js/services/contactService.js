@@ -20,6 +20,17 @@ var contactService = (function() {
       $.getJSON(requestUrl + 'contact/name/' + first + "/" + last, callback);
    }
 
+   function update_contact(id, callback) {
+      $.ajax({
+         url: requestUrl + "contact/" + id,
+         type: 'PUT',
+         contentType: 'application/json',
+         success: function(result) {
+             callback(result);
+         }
+     });
+   }
+
 
   // PUBLIC API
   var publicAPI = {
@@ -38,12 +49,6 @@ var contactService = (function() {
          if(lookup) {
           contacts_like(lookup, templates.fillContactDropdown);
          }
-      // Create an array with the name in the #tags field.  Perform
-      // a GET request for the contact matching first and last name.
-      // $('#tags').on('blur', function() {
-      //   var fullname = $('#tags').val().split(" ");
-      //   alert(fullname[0] + " " + fullname[1]);
-      // });
    },
 
    get_contact : function(fullName) {
@@ -53,6 +58,14 @@ var contactService = (function() {
 
       get_contact_byName(firstName, lastName,
                         templates.editContactFormFiller);
+   },
+
+   edit_contact : function() {
+      $('#edit_cust_submit').on('click', function() {
+         contact_id = $("#edit_contact_id").val();
+         console.log(contact_id);
+         update_contact(contact_id, templates.contact_update_form_reset);
+      });
    }
 
   };

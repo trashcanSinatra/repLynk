@@ -93,6 +93,7 @@ var templateManager = (function() {
 
    editContactFormFiller : function(data) {
       inputs = {
+         contact_id: $('#edit_contact_id'),
          first_name: $("#edit_first_name"),
          last_name: $("#edit_last_name"),
          phone: $("#edit_phone"),
@@ -100,11 +101,16 @@ var templateManager = (function() {
       };
 
       $.each(data, function(i, val) {
+         inputs.contact_id.val(val["id"]);
          inputs.first_name.val(val['first_name']);
          inputs.last_name.val(val['last_name']);
          inputs.phone.val(val['phone']);
          inputs.email.val(val['email']);
       });
+   },
+
+   contact_update_form_reset : function(result) {
+      console.log(result);
    }
   };
 
