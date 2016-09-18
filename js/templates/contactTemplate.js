@@ -96,8 +96,7 @@ var templateManager = (function() {
          first_name: $("#edit_first_name"),
          last_name: $("#edit_last_name"),
          phone: $("#edit_phone"),
-         email: $("#edit_email"),
-         company: $("#edit_company")
+         email: $("#edit_email")
       };
 
       $.each(data, function(i, val) {
@@ -105,7 +104,6 @@ var templateManager = (function() {
          inputs.last_name.val(val['last_name']);
          inputs.phone.val(val['phone']);
          inputs.email.val(val['email']);
-         inputs.company.val(val['company_id']);
       });
    }
   };
