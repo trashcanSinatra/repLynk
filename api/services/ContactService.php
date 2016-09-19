@@ -1,4 +1,5 @@
 <?php
+
 require 'IService.php';
 
 
@@ -25,7 +26,8 @@ class ContactService implements IService {
       });
 
       $app->put('/contact/:id', function($id) {
-         echo "YOU MADE IT!" . " $id";
+        $contact = json_decode(file_get_contents("php://input"));
+        echo $contact->first_name;
       });
 
       $app->get('/contact/name/:first/:last',
