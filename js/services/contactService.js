@@ -63,7 +63,7 @@ var contactService = (function() {
 
    edit_contact : function() {
       $('#edit_cust_submit').on('click', function() {
-          
+
          var contact_id = $("#edit_contact_id").val();
          var inputs = {
              first_name: $("#edit_first_name").val(),
@@ -71,9 +71,9 @@ var contactService = (function() {
              phone: $("#edit_phone").val(),
              email: $("#edit_email").val()
          };
-                
+
          update_contact(contact_id, inputs, templates.contact_update_form_reset);
-          
+
       });
    }
 
