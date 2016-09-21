@@ -27,7 +27,18 @@ class ContactService implements IService {
 
       $app->put('/contact/:id', function($id) {
         $contact = json_decode(file_get_contents("php://input"));
-        echo $contact->first_name;
+
+        $updateData = array(
+           'first_name' => $contact->first_name,
+           'last_name' => $contact->last_name,
+           'phone' => $contact->phone,
+           'email' => $contact->email
+        );
+
+        echo var_dump($updateData);
+        $model = new ContactModel();
+        $model->update_contact($id, $updateData);
+
       });
 
       $app->get('/contact/name/:first/:last',
