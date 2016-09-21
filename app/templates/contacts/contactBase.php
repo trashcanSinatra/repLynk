@@ -26,6 +26,7 @@
 
   <div id="add_contact" style="display: none">
      <p>{{ current_url }}</p>
+     <p>{{ root }}</p>
 
   </div>
   <div id="edit_contact" style="display: none">
