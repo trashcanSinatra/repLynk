@@ -18,14 +18,16 @@
         return $contact->get();
       }
 
+
       public function get_contact_by_fullname($first, $last)
       {
          $contact = Pixie::table('contacts')
                ->where('first_name', $first)
                ->where('last_name', $last);
-               
+
          return $contact->get();
       }
+
 
       public function like_contacts($param)
       {
@@ -39,6 +41,11 @@
             ->join('companies', 'companies.id', '=', 'company_id');
 
         return $contacts->get();
+      }
+
+      public function update_contact($id, $updateArray)
+      {
+         Pixie::table('contacts')->where('id', $id)->update($updateArray);
       }
 
    }
