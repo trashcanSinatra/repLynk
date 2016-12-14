@@ -32,7 +32,7 @@
   <div id="edit_contact" style="display: none">
      <div class="container">
         <div class="row">
-         <form>
+         <form id="contact_update_form">
            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
            <label for="tags">Enter Contact:</label>
            <input id="tags" placeholder="Search Contacts..." />

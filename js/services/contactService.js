@@ -28,6 +28,9 @@ var contactService = (function() {
          contentType: 'application/json',
          success: function(result) {
              callback(result);
+         },
+         error: function(xhr, text) {
+            callback(xhr.responseText);
          }
      });
    }

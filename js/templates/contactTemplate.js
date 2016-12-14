@@ -4,6 +4,12 @@ var templateManager = (function() {
   var contact_results = [];
   // Private Methods
 
+  function clear_form(form_id) {
+     form_id.find('input').each(function() {
+        this.value = "";
+     });
+  }
+
   function phoneSwap(dataVal) {
     width = $( window ).width();
     var html = "";
@@ -110,7 +116,11 @@ var templateManager = (function() {
    },
 
    contact_update_form_reset : function(result) {
-      console.log(result);
+      if(result == 1) {
+         clear_form($('#contact_update_form'));
+      } else {
+         alert(result);
+      }
    }
   };
 

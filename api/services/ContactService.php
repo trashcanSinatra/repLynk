@@ -25,9 +25,8 @@ class ContactService implements IService {
         echo json_encode($contact);
       });
 
-      $app->put('/contact/:id', function($id) {
-        $contact = json_decode(file_get_contents("php://input"));
-
+      $app->put('/contact/:id', function($id) use ($app) {
+        $contact = json_decode($app->request()->getBody());
         $updateData = array(
            'first_name' => $contact->first_name,
            'last_name' => $contact->last_name,
@@ -35,9 +34,14 @@ class ContactService implements IService {
            'email' => $contact->email
         );
 
-        echo var_dump($updateData);
-        $model = new ContactModel();
-        $model->update_contact($id, $updateData);
+        try {
+           $model = new ContactModel();
+           $model->update_contact($id, $updateData);
+           echo 1;
+        }
+        catch(Exception $e) {
+           echo "Contact could not be updated \n" . $e->getMessage();
+        }
 
       });
 
